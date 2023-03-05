@@ -293,6 +293,14 @@ ul{
     background-image: none;
 }
 
+
+#results {
+    padding: 5%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .blockGrid {
     display: grid;
     grid: auto auto auto / auto auto;

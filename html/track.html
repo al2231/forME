@@ -22,20 +22,34 @@
 <body>
     <h2 id="h2gen">TrackME</h2>
     <hr class="bchr">
-
-    <div class="trackers">
-        <div class="trackind">
-            <h3 class="WT">Water tracker</h3> 
-            <img class="minus" src="../assets/icons/minus.png" alt="minus">
-        </div>
-        <div class="check">
-            <div onclick="checkIt()" id="box" class="checkbox">
-                <img id="checkmark" class="checkmark" src="../assets/icons/checkmark.png" alt="mark">
+    <div class="trackers_container">
+        <div class="trackers">
+            <div class="trackind">
+                <h3 class="WT">Water tracker</h3> 
+                <img class="minus" src="../assets/icons/minus.png" alt="minus">
             </div>
-            <p id="reminder">16oz by 5PM today</p>
+            <div class="check">
+                <div onclick="checkIt()" id="box" class="checkbox">
+                    <img id="checkmark" class="checkmark" src="../assets/icons/checkmark.png" alt="mark">
+                </div>
+                <p id="reminder">16oz by 5PM today</p>
+            </div>
         </div>
-    </div>
 
+        <div style="display: block;" class="trackers">
+            <div class="trackind">
+                <h3 class="WT">Medication</h3> 
+                <img class="minus" src="../assets/icons/minus.png" alt="minus">
+            </div>
+            <div class="check">
+                <div onclick="checkIt()" id="box" class="checkbox">
+                    <img id="checkmark" class="checkmark" src="../assets/icons/checkmark.png" alt="mark">
+                </div>
+                <p id="reminder">10mg of Prozac by 2PM</p>
+            </div>
+        </div>
+
+    </div>
     <div class="trackers">
         <div  onclick="openIt()" class="trackind">
             <h3 class="AT">Add a new tracker</h3>
@@ -98,6 +112,9 @@
         var open = false;
         var count = 0;
 
+        //display nothing on load
+        document.getElementById("dropdown").style.display="none";
+
         function openIt() {
             if (open == false) {
                 document.getElementById("dropdown").style.display="block";
@@ -151,6 +168,9 @@
             inputContainer.appendChild(button);
             count = 1;
             document.getElementById("dropdown").style.display="none";
+
+            const trackerContainer = document.getElementById("trackers_container");
+            
         }
 
         function addTask() {

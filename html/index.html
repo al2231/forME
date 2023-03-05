@@ -24,7 +24,7 @@
             const time = localStorage.getItem("time");
             const dosage = localStorage.getItem("dosage");
             //console.log(name, time, dosage);
-            if(name!=null && time!=null && dosage!=null){
+            if(name!="" && time!="" && dosage!=""){
                 document.getElementById("med").innerHTML = "Hey User! Make sure to take your " + dosage + "mg of " + name + " at " + time + "!";
             } else {
                 document.getElementById("med").innerHTML = "Hey User! You currently have no active medications!";
@@ -34,7 +34,7 @@
             const timefortask = localStorage.getItem("timefortask");
             const task = localStorage.getItem("task");
             //console.log(name, time, dosage);
-            if(task!=null && timefortask!=null){
+            if(task!="" && timefortask!=""){
                 document.getElementById("task").innerHTML = "Hey User! Make sure to " + task + " at " + timefortask + "!";
             } else {
                 document.getElementById("task").innerHTML = "Hey User! You currently have no tasks!";
@@ -66,14 +66,11 @@
             <p id="med">Hey User! Make sure to take the Prozac medication today at 9:00AM.</p>
         </div>
         <div>
-            <p id="task">Hey User! You currently have no tasks!</p>
-        </div>
+            <p id="task">Hey User! You currently have no tasks!</p>        </div>
         
     </section>
     <img class="rightH" src="../assets/BLheart.png" alt="rightH">
     <img class="leftH" src="../assets/Bheart.png" alt="leftH">
-
-
 
     <nav class="bottom">
         <ul>

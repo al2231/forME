@@ -1,0 +1,455 @@
+html{
+    background-color: #fff6f4; 
+}
+
+body{
+    /* justify-content: center; */
+    right: 0;
+    left: 0;
+    font-family: 'Blinker', sans-serif;
+    margin: 0px;
+    padding: 15px;
+    margin-top: 27px;
+
+}
+
+p{
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.top{
+    display: flex;
+    justify-content: space-around;
+    border-bottom:rgb(240, 178, 128) solid 1px;
+    padding-bottom: 10px;
+}
+
+.bottom{
+    border: box;
+    display: flex;
+    background-color: white;
+    bottom:0;
+    /* box-shadow: 0px -5px 13px rgb(208, 208, 208); */
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #dcdcdc;
+}
+
+.title{
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.forme{
+    height: 40px;
+}
+
+ul{
+    display: flex; 
+    justify-content: space-around;   
+    top: 0;
+    width: 100%;
+    list-style-type: none;
+    margin:10px;
+    padding: 0;
+    padding-right: 30px;
+    overflow: hidden;
+}
+
+
+/* floating hearts */
+.rightH{
+    position: absolute;
+    width: 87px;
+    height: 114.9px;
+    left: 303px;
+    top: 384px;
+    z-index: 0;
+    opacity: 0.85;
+}
+
+.leftH{
+    position: absolute;
+    width: 202px;
+    height: 173.9px;
+    left: -63px;
+    top: 604px;
+
+    opacity: 0.85;
+}
+
+
+/* log in */
+/* form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  } */
+  
+  /* Style the input fields /
+  input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  / Style the submit button /
+  button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  / Make the submit button full-width on small screens */
+  /* @media screen and (max-width: 480px) {
+    button[type="submit"] {
+      width: 100%;
+    } */
+/* } */
+
+
+.positive{
+    margin-top:20px;
+    background-color: rgb(240, 178, 128);
+    margin: 25px;
+    color:white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    word-spacing: 30%;
+    
+}
+
+.profile{
+    height: 31px;
+    margin-top: 5px;
+
+}
+
+.info{
+    margin-top:8px;
+    height: 28px;
+}
+
+.house{
+    width: 37px;
+    height: 38px;
+}
+  
+/* Reminders home page */
+.today div{
+    border-radius: 15px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    padding: 10px;
+    margin-top:15px;
+    margin-bottom:15px;
+    background-color: white;
+    position: relative;
+    z-index: 10;
+}
+
+
+.heartpills{
+    width: 50px;
+    height: 44px;
+}
+
+.tracker{
+    width: 40px;
+    height: 40px;
+    left: 333px;
+    top: 866px;
+}
+
+.today{
+    margin:20px;
+}
+
+.today h3{
+    padding-bottom:10px;
+    border-bottom:rgb(240, 178, 128) solid 1px;
+    font-weight:bolder;
+    font-size: 25px;
+    line-height: 36px;
+    /* identical to box height */
+
+    letter-spacing: 0.02em;
+}
+
+
+/* profile page */
+.profheader{
+    display: grid;
+    grid-template-columns: 98% auto;
+}
+
+.profheader img{
+    margin: 6px 0px 0px -58px;
+    width: 23px;
+}
+
+.profInfo{
+    display: flex;
+    background-color: rgb(240, 178, 128);
+    border-radius: 15px;
+    gap: 20px;
+    padding:20px;
+    margin-left:5px;
+    margin-right:5px;
+    padding-top: 35px;
+    letter-spacing: .4px;
+}
+
+.profInfo h3{
+    margin-top:10px;
+}
+
+.profInfo p{
+    margin-top: -19px;
+}
+
+.profh2{
+    margin-top: 2px;
+}
+
+.profile h2{
+    text-align: center;
+}
+
+.profInfo img{
+    height: 63px;
+    margin-top: 16px;
+}
+
+.set{
+    display: grid;
+    grid-template-columns: 10% 80% auto;
+    margin: 15px 0px;
+}
+
+.profile p{
+    font-size: 20px;
+}
+
+.arrow{
+    margin-top: 10px;
+    height: 20px;
+}
+
+.seth2{
+    margin-top:43px;
+    margin-bottom:20px;
+}
+
+.locate{
+    height: 37px;
+    margin-top:2px
+}
+
+.sethr{
+    width: 290px;
+    margin-left:45px;
+    border: .5px solid #FEAE82;
+    height: 0px;
+    margin-top: 0px;
+}
+
+.setLine{
+    margin: 10px 28px;
+    
+}
+
+
+
+
+/* /styles for pills page/ */
+html {
+    height: 115%;
+    background-color: #FFFAF9;
+}
+
+.blockGrid a{
+    text-decoration: none;
+    color: black;
+}
+
+.pilltabs {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+    margin-bottom: 0px; /*for gradient*/
+    padding-top: 20px;
+}
+.tabs {
+    padding: 10px;
+    width: 40%;
+    text-align: center;
+}
+.tabs_active {
+    padding: 10px;
+    width: 40%;
+    text-align: center;
+    color: black;
+    background-image: linear-gradient(#FFFAF9, 75%,#FEAE82);
+    margin-bottom:-1px;
+    border-radius:2px;
+}
+
+.pilltabs a {
+    text-decoration: none;
+    color:black;
+}
+
+.bchr {
+    width: 90%;
+    border: none;
+    background-color:#FEAE82;
+    height: .5px;
+    margin-top: 0px;
+}
+
+#search {
+    display: flex;
+    justify-content: center;
+    padding-top: 18px;
+}
+#searchId {
+    background-image: url(../assets/icons/search.png);
+    background-size: 16px;
+    background-repeat: no-repeat;
+    background-position: 3%;
+    text-indent: 10%;
+    border: 0.5px solid #BDB9B7;
+    border-radius: 40px;
+    width: 85%;
+    height: 30px;
+}
+#searchId:active {
+    background-image: none;
+}
+
+.blockGrid {
+    display: grid;
+    grid: auto auto auto / auto auto;
+    grid-gap: 20px;
+    padding: 25px;
+}
+
+.block {
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+
+
+    background: #FFFFFF;
+    border: 1px solid #F5F5F5;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+}
+.block p {
+    margin: 10px;
+}
+
+.block img{
+    width:120px;
+}
+
+
+
+
+/* track */
+#h2gen{
+    display: flex;
+    justify-content: center;
+    margin-bottom:12px;
+}
+
+.trackers {
+    width: 80%;
+    background-color: white;
+    padding: 3%;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    margin: 20px auto;
+}
+
+.trackind {
+    display:grid;
+    grid-template-columns: 85% auto;
+
+}
+
+.minus{
+    margin-top: 10px;
+}
+
+
+.check{
+    background-color: rgba(254, 174, 130, 0.26);
+    padding: 3%;
+    display: flex;
+}
+
+.check p{
+    margin: 5px 10px;
+}
+
+.WT{
+    margin:10px;
+}
+
+.checkbox{
+    width: 20px;
+    height: 20px;
+    border: 3px solid #000000;
+    border-radius: 7px;
+    text-align: center;
+}
+
+
+
+.checkmark{
+    display: none;
+}
+
+
+/* info pages */
+.infoB{
+    display: grid;
+    grid-template-columns: 3% auto;
+
+}
+
+.infoB h2{
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+
+.back{
+    height: 27px;
+    margin-top: 10px;
+}
+
+
+.mirena{
+    margin-left: 20px;
+    margin-right: 20px;
+
+}

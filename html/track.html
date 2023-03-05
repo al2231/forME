@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
+
+    <!-- Title for font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E%22%3E">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@1,100&display=swap" rel="stylesheet">
+
+    <!-- Title me font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E%22%3E">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@300&display=swap" rel="stylesheet">
+
+    <title>Tracker</title>
+
+
+    <script>
+        // function check(){
+        //     document.getElementById("checkmark").style.display="block";
+        //     document.getElementById("checkmark").style.width="13px";
+        //     document.getElementById("checkmark").style.padding="3px";
+
+        // }
+        // create a new input element with type "checkbox"
+        checkmark = document.getElementById("checkmark");
+        console.log(checkmark);
+
+        // add an onchange event listener to the checkbox
+        function hi() {
+            if (checkmark == null) {
+                check();
+            }
+            if (checkmark != null){
+                uncheck();
+                alert("bye");
+
+            }
+        };
+
+        function check() {
+            console.log(document.getElementById("checkmark").style.display="block");
+            document.getElementById("checkmark").style.width="13px";
+            document.getElementById("checkmark").style.padding="3px";
+
+        }
+
+        // function to handle unchecking the checkbox
+        function uncheck() {
+            document.getElementById("checkmark").style.display="none";
+        }
+    </script>
+
+
+</head>
+
+<body>
+    <h2 id="h2gen">TrackME</h2>
+    <hr class="bchr">
+
+    <div class="trackers">
+        <div class="trackind">
+            <h3 class="WT">Water Tracker</h3> 
+            <img class="minus" src="assets/icons/minus.png" alt="minus">
+        </div>
+        <div class="check">
+            <div onclick="hi()" id="box" class="checkbox">
+                <img id="checkmark" class="checkmark" src="assets/icons/checkmark.png" alt="mark">
+            </div>
+            <p>16oz by 5PM today</p>
+        </div>
+    </div>
+
+    <div class="addtracker">
+        <img src="assets/plus.png" alt="plus">
+    </div>
+    <nav class="bottom">
+        <ul>
+            <li> 
+                <a href="index.html"><img class = "house" src="assets/nav/bwhouse.png" alt="home" ></a>
+            </li>
+            <li> 
+                <a href="birthcontrol.html"><img class="heartpills" src="assets/nav/bwheart.png" alt="pills" ></a>
+            </li>
+            <li> 
+                <a href="track.html"><img class="tracker" src="assets/nav/note.png" alt="tracker" ></a>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>

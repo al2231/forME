@@ -1,5 +1,7 @@
 html{
+    height: 115%;
     background-color: #fff6f4; 
+    margin: 20px;
 }
 
 body{
@@ -7,10 +9,7 @@ body{
     right: 0;
     left: 0;
     font-family: 'Blinker', sans-serif;
-    margin: 0px;
-    padding: 15px;
     margin-top: 27px;
-
 }
 
 p{
@@ -35,6 +34,8 @@ p{
     bottom: 0;
     width: 100%;
     border-top: 1px solid #dcdcdc;
+    z-index: 13;
+    margin-left: -30px;
 }
 
 .title{
@@ -43,8 +44,21 @@ p{
     justify-content: center;
 }
 
+/*navigation*/
 .forme{
     height: 40px;
+}
+
+.house{
+    width: 37px;
+    height: 38px;
+}
+
+.tracker{
+    width: 40px;
+    height: 40px;
+    left: 333px;
+    top: 866px;
 }
 
 ul{
@@ -60,6 +74,7 @@ ul{
 }
 
 
+/* floating hearts */
 /* floating hearts */
 .rightH{
     position: absolute;
@@ -81,46 +96,7 @@ ul{
     opacity: 0.85;
 }
 
-
-/* log in */
-/* form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  } */
-  
-  /* Style the input fields /
-  input[type="text"], input[type="password"] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  
-  / Style the submit button /
-  button[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  / Make the submit button full-width on small screens */
-  /* @media screen and (max-width: 480px) {
-    button[type="submit"] {
-      width: 100%;
-    } */
-/* } */
-
-
+/*styles for main page*/
 .positive{
     margin-top:20px;
     background-color: rgb(240, 178, 128);
@@ -130,23 +106,16 @@ ul{
     padding: 10px 20px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     word-spacing: 30%;
-    
 }
 
 .profile{
     height: 31px;
     margin-top: 5px;
-
 }
 
 .info{
     margin-top:8px;
     height: 28px;
-}
-
-.house{
-    width: 37px;
-    height: 38px;
 }
   
 /* Reminders home page */
@@ -161,17 +130,9 @@ ul{
     z-index: 10;
 }
 
-
 .heartpills{
     width: 50px;
     height: 44px;
-}
-
-.tracker{
-    width: 40px;
-    height: 40px;
-    left: 333px;
-    top: 866px;
 }
 
 .today{
@@ -225,7 +186,7 @@ ul{
     margin-top: 2px;
 }
 
-.profile h2{
+.profile h2, .about h2{
     text-align: center;
 }
 
@@ -269,18 +230,9 @@ ul{
 
 .setLine{
     margin: 10px 28px;
-    
 }
-
-
-
 
 /* /styles for pills page/ */
-html {
-    height: 115%;
-    background-color: #FFFAF9;
-}
-
 .blockGrid a{
     text-decoration: none;
     color: black;
@@ -367,10 +319,7 @@ html {
     width:120px;
 }
 
-
-
-
-/* track */
+/* styles for tracker page */
 #h2gen{
     display: flex;
     justify-content: center;
@@ -397,7 +346,6 @@ html {
     margin-top: 10px;
 }
 
-
 .check{
     background-color: rgba(254, 174, 130, 0.26);
     padding: 3%;
@@ -420,8 +368,6 @@ html {
     text-align: center;
 }
 
-
-
 .checkmark{
     display: none;
 }
@@ -442,11 +388,11 @@ html {
 }
 
 
+
 .back{
     height: 27px;
     margin-top: 10px;
 }
-
 
 .mirena{
     margin-left: 20px;
@@ -454,6 +400,16 @@ html {
 
 }
 
-.mission {
-    
+/*styles for about page*/
+.about {
+    padding: 5%;
+}
+
+#mission {
+    line-height: 2;
+    padding-bottom: 5%;
+}
+
+#team {
+    line-height: 2;
 }

@@ -187,28 +187,6 @@
                 }
                 inputContainer.appendChild(input);
             }
-
-            // create a button and append it to the container
-            const button = document.createElement("button");
-            button.textContent = "Add";
-            button.addEventListener("click", function() {
-                const inputs = inputContainer.querySelectorAll("input");
-                const task = inputs[0].value;
-                const time = inputs[1].value;
-
-                document.getElementById("input-container").style.display="none";
-                
-                console.log(task, time);
-                window.localStorage.setItem("task", task);
-                window.localStorage.setItem("timefortask", time);
-
-            });
-            button.style.margin= "10px";
-            button.style.padding= "10px 12px";
-
-            inputContainer.appendChild(button);
-            count = 1;
-            document.getElementById("dropdown").style.display="none";
         }
     </script>
 </body>

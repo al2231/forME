@@ -25,7 +25,7 @@
             const dosage = localStorage.getItem("dosage");
             //console.log(name, time, dosage);
             if(name!=null && time!=null && dosage!=null){
-                document.getElementById("med").innerHTML = "Hey User! Make sure to take your " + dosage + "mg of " + name + " at " + time;
+                document.getElementById("med").innerHTML = "Hey User! Make sure to take your " + dosage + "mg of " + name + " at " + time + "!";
             } else {
                 document.getElementById("med").innerHTML = "Hey User! You currently have no active medications!";
             }
@@ -35,7 +35,7 @@
             const task = localStorage.getItem("task");
             //console.log(name, time, dosage);
             if(task!=null && timefortask!=null){
-                document.getElementById("task").innerHTML = "Hey User! Make sure to " + task + " at " + timefortask;
+                document.getElementById("task").innerHTML = "Hey User! Make sure to " + task + " at " + timefortask + "!";
             } else {
                 document.getElementById("task").innerHTML = "Hey User! You currently have no tasks!";
             }

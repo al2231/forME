@@ -22,20 +22,34 @@
 <body>
     <h2 id="h2gen">TrackME</h2>
     <hr class="bchr">
-
-    <div class="trackers">
-        <div class="trackind">
-            <h3 class="WT">Water tracker</h3> 
-            <img class="minus" src="../assets/icons/minus.png" alt="minus">
-        </div>
-        <div class="check">
-            <div onclick="checkIt()" id="box" class="checkbox">
-                <img id="checkmark" class="checkmark" src="../assets/icons/checkmark.png" alt="mark">
+    <div class="trackers_container">
+        <div class="trackers">
+            <div class="trackind">
+                <h3 class="WT">Water tracker</h3> 
+                <img class="minus" src="../assets/icons/minus.png" alt="minus">
             </div>
-            <p id="reminder">16oz by 5PM today</p>
+            <div class="check">
+                <div onclick="checkIt()" id="box" class="checkbox">
+                    <img id="checkmark" class="checkmark" src="../assets/icons/checkmark.png" alt="mark">
+                </div>
+                <p id="reminder">16oz by 5PM today</p>
+            </div>
         </div>
-    </div>
 
+        <div style="display: block;" class="trackers">
+            <div class="trackind">
+                <h3 class="WT">Medication</h3> 
+                <img class="minus" src="../assets/icons/minus.png" alt="minus">
+            </div>
+            <div class="check">
+                <div onclick="checkIt()" id="box" class="checkbox">
+                    <img id="checkmark" class="checkmark" src="../assets/icons/checkmark.png" alt="mark">
+                </div>
+                <p id="reminder">10mg of Prozac by 2PM</p>
+            </div>
+        </div>
+
+    </div>
     <div class="trackers">
         <div  onclick="openIt()" class="trackind">
             <h3 class="AT">Add a new tracker</h3>
@@ -43,7 +57,7 @@
         </div>
         <div id="dropdown">
             <button onclick="addTask()"class="tasks">Habits</button>
-            <button onclick="addTracker()"class="tracker">Tracker</button>
+            <button onclick="addMedicine()"class="tracker">Medication</button>
         </div>
         <div id="input-container"></div>
         
@@ -98,12 +112,17 @@
         var open = false;
         var count = 0;
 
+        //display nothing on load
+        document.getElementById("dropdown").style.display="none";
+
         function openIt() {
             if (open == false) {
                 document.getElementById("dropdown").style.display="block";
                 open = true;
             } else {
                 closeIt();
+                
+                document.getElementById("input-container").style.display="none";
             }
         };
         
@@ -112,8 +131,9 @@
             open = false;
         }
 
-        function addTracker() {
+        function addMedicine() {
             const inputContainer = document.getElementById("input-container");
+            inputContainer.style.display = "block";
 
             // create three input fields and append them to the container
             for (let i = 1; i <= 3; i++) {
@@ -137,10 +157,11 @@
                 const medicationName = inputs[0].value;
                 const time = inputs[1].value;
                 const dosage = inputs[2].value;
-
+                
+                console.log(medicationName, time, dosage);
+                makeMWidget(medicationName, time, dosage);
                 document.getElementById("input-container").style.display="none";
 
-                console.log(medicationName, time, dosage);
                 window.localStorage.setItem("name", medicationName);
                 window.localStorage.setItem("time", time);
                 window.localStorage.setItem("dosage", dosage);
@@ -155,6 +176,7 @@
 
         function addTask() {
             const inputContainer = document.getElementById("input-container");
+            inputContainer.style.display = "block";
 
             // create two input fields and append them to the container
             for (let i = 1; i <= 2; i++) {
@@ -167,6 +189,61 @@
                 }
                 inputContainer.appendChild(input);
             }
+
+            // create a button and append it to the container
+            const button = document.createElement("button");
+            button.textContent = "Add";
+            button.addEventListener("click", function() {
+                const inputs = inputContainer.querySelectorAll("input");
+                const name = inputs[0].value;
+                const time = inputs[1].value;
+
+                console.log(name, time);
+
+                makeTWidget(name, time);
+                document.getElementById("input-container").style.display="none";
+
+                window.localStorage.setItem("name", name);
+                window.localStorage.setItem("timefortask", time);
+            });
+            button.style.margin= "10px";
+            button.style.padding= "10px 12px";
+
+            inputContainer.appendChild(button);
+            count = 1;
+            document.getElementById("dropdown").style.display="none";
+        }
+
+        function makeTWidget(name, time) {
+            trackerContainer = document.getElementById("trackers_container");
+            const trackerHTML = `
+                <div class="trackind">
+                    <h3 class="WT">Habit</h3> 
+                    <img class="minus" src="../assets/icons/minus.png" alt="minus">
+                </div>
+                <div class="check">
+                    <div onclick="checkIt()" id="box" class="checkbox">
+                        <img id="checkmark" class="checkmark" src="../assets/icons/checkmark.png" alt="mark">
+                    </div>
+                <p id="reminder">${name} by ${time} today!</p>
+                </div>`;
+            trackerContainer.append(trackerHTML);
+        }
+
+        function makeMWidget(name, time, dosage) {
+            trackerContainer = document.getElementById("trackers_container");
+            const trackerHTML = `
+                <div class="trackind">
+                    <h3 class="WT">Medication</h3> 
+                    <img class="minus" src="../assets/icons/minus.png" alt="minus">
+                </div>
+                <div class="check">
+                    <div onclick="checkIt()" id="box" class="checkbox">
+                        <img id="checkmark" class="checkmark" src="../assets/icons/checkmark.png" alt="mark">
+                    </div>
+                <p id="reminder">${dosage}mg of ${name} by ${time}</p>
+                </div>`;
+            trackerContainer = trackerContainer + trackerHTML;
         }
     </script>
 </body>

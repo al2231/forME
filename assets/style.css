@@ -416,6 +416,10 @@ input{
     display: none;
 }
 
+button {
+    display: block;
+}
+
 /* info pages */
 .infoB{
     display: grid;

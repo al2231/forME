@@ -22,8 +22,9 @@ function handleSearch(query) {
                 const openfda = result.openfda;
                 const name = openfda.brand_name;
                 const link = `med.html?query=${encodeURIComponent(name)}`;
-                return `<button onclick="window.location.href='${link}'">${name}</button>`;
-            }).join('');
+                return `<button onclick="goto('${name}');" style="background-color: white; border: 1px outset #FFFAF9;
+                        border-radius: 10%;""><img src="assets/pill.png" alt="pill" style="float: left;">${name}</button>`;
+            }).join('<br>');
             resultsDiv.innerHTML = resultsHTML;
         })
         .catch(error => console.error(error));

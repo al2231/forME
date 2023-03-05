@@ -152,5 +152,29 @@
         </ul>
 
     </nav>
+    <script>
+        const form = document.querySelector('#search');
+        const searchQuery = document.querySelector('#searchId');
+
+        const gridItems = document.querySelectorAll('.block');
+        const paragraphs = document.querySelectorAll('.block p');
+        
+        searchQuery.addEventListener('input', () => {
+            //console.log(searchQuery.value);
+            // trigger search function with current input value
+            handleSearch(searchQuery.value);
+        });
+        
+        function handleSearch(text){
+            //console.log(text);
+            gridItems.forEach((item, index) => {
+                if(paragraphs[index].textContent.toLowerCase().startsWith(text)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>

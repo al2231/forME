@@ -2,6 +2,18 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="../assets/style.css">
+
+    <!-- Title for font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@1,100&display=swap" rel="stylesheet">
+
+    <!-- Title me font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@300&display=swap" rel="stylesheet">
+
     <title>Medication Information</title>
   </head>
   <body>
@@ -10,19 +22,36 @@
     <script>
         function displayMedicationInfo(brand_name, generic_name, type, storage, manufacturer, route, active_ingredient, indications_and_usage) {
             const medicationHTML = `
-                <h2>${brand_name} (${generic_name})</h2>
-                <h3>type</h3>
-                <p>${type}</p>
-                <h3>storage</h3>
-                <p>${storage}</p>
-                <h3>manufacturer</h3>
-                <p>${manufacturer}</p>
-                <h3>route</h3>
-                <p>${route}</p>
-                <h3>active ingredients</h3>
-                <p>${active_ingredient}</p>
-                <h3>indications and usage</h3>
-                <p>${indications_and_usage}</p>
+                <div class="infoB">
+                    <a href="meducation.html"><img class="back" src="../assets/icons/back.png" alt="backArrow"></a>
+                    <h2>${brand_name}</h2>
+                </div>
+                <section class="mirena">
+                    <hr class="bchr">
+                    <p>Generic name: ${generic_name}</p>
+                    <hr class="bchr">
+                    <h3>type</h3>
+                    <p>${type}</p>
+                    <hr class="bchr">
+
+                    <h3>storage</h3>
+                    <p>${storage}</p>
+                    <hr class="bchr">
+
+                    <h3>manufacturer</h3>
+                    <p>${manufacturer}</p>
+                    <hr class="bchr">
+
+                    <h3>route</h3>
+                    <p>${route}</p>
+                    <hr class="bchr">
+
+                    <h3>active ingredients</h3>
+                    <p>${active_ingredient}</p>
+                    <hr class="bchr">
+                    <h3>indications and usage</h3>
+                    <p>${indications_and_usage}</p>
+                </section>
             `;
             document.getElementById("med-info").innerHTML = medicationHTML;
         }

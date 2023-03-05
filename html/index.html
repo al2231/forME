@@ -17,23 +17,42 @@
     <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@300&display=swap" rel="stylesheet">
     
     <title>Home</title>
+    <script src="../assets/factsAndAff.js"></script>
+    <script>
+        function getInfo(){
+            const name = localStorage.getItem("name");
+            const time = localStorage.getItem("time");
+            const dosage = localStorage.getItem("dosage");
+            //console.log(name, time, dosage);
+            if(name!=null && time!=null && dosage!=null){
+                document.getElementById("med").innerHTML = "Hey User! Make sure to take your " + dosage + "mg of " + name + " at " + time;
+            } else {
+                document.getElementById("med").innerHTML = "Hey User! Make sure to take the Prozac medication today at 9:00AM.";
+            }
+        }
+        window.onload = function() {
+            getInfo();
+            //console.log("here");
+            getPositives();
+        }
+
+    </script>
 </head>
 <body>
-    <nav class="top">
+    <nav id="top" >
         <img class="info" src="../assets/headerIcons/info.png" alt="info">
         <img class="forme" src="../assets/headerIcons/forME.png" alt="title">
         <a href="profile.html"><img class="profile" src="../assets/headerIcons/profile.png" alt="profile"></a>
     </nav>
     
-    
     <div class="positive">
-        <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quos nemo a esse velit temporibus repudiandae? Ut deserunt dolorem, officia dicta delectus officiis! Quam ex voluptatibus, temporibus natus amet ut."</p>
+        <p id = "positive"> ""</p>
     </div>
     <br>
     <section class="today">
         <h3>Reminders</h3>
         <div>
-            <p>Hey User! Make sure to take the Prozac medication today at 9:00AM.</p>
+            <p id="med">Hey User! Make sure to take the Prozac medication today at 9:00AM.</p>
         </div>
         <div>
             <p>Hey User! Your tracker says you haven't drank water today.</p>

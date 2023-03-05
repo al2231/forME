@@ -25,20 +25,26 @@
 
     <div class="trackers">
         <div class="trackind">
-            <h3 class="WT">Water Tracker</h3> 
+            <h3 class="WT">Water tracker</h3> 
             <img class="minus" src="../assets/icons/minus.png" alt="minus">
         </div>
         <div class="check">
             <div onclick="checkIt()" id="box" class="checkbox">
                 <img id="checkmark" class="checkmark" src="../assets/icons/checkmark.png" alt="mark">
             </div>
-            <p>16oz by 5PM today</p>
+            <p id="reminder">16oz by 5PM today</p>
         </div>
     </div>
 
-    <div class="addtracker">
-        <img src="../assets/icons/plus.png" alt="plus">
+    <div class="trackers">
+        <div class="trackind">
+            <h3 class="AT">Add a new tracker</h3>
+            <button onclick="addInputs()"><img src="plus.png" alt="plus"></button>
+            <div id="input-container"></div>
+        </div>
+        
     </div>
+
     <nav class="bottom">
         <ul>
             <li> 
@@ -69,8 +75,10 @@
 
         function check() {
             checkmark.style.display="block";
-            document.getElementById("checkmark").style.width="13px";
-            document.getElementById("checkmark").style.padding="3px";
+            document.getElementById("checkmark").style.width = "13px";
+            document.getElementById("checkmark").style.padding = "3px";
+            document.getElementById("reminder").style.textDecoration = "line-through";
+
             checked = true;
         }
 
@@ -78,7 +86,46 @@
         function uncheck() {
             checkmark = document.getElementById("checkmark");
             checkmark.style.display = "none";
+            document.getElementById("reminder").style.textDecoration = "none";
+            
             checked = false;
+        }
+
+        var popup = false;
+
+        function addInputs() {
+            const inputContainer = document.getElementById("input-container");
+            if(popup == false){
+                // create three input fields and append them to the container
+                for (let i = 1; i <= 3; i++) {
+                    const input = document.createElement("input");
+                    input.type = "text";
+                    if (i === 1) {
+                        input.placeholder = "Medication Name";
+                    } else if (i === 2) {
+                        input.placeholder = "[hour]:[min][AM/PM]";
+                    } else {
+                        input.placeholder = "Dosage(mg)";
+                    }
+                    inputContainer.appendChild(input);
+                    popup = true;
+                }
+
+                // create a button and append it to the container
+                const button = document.createElement("button");
+                button.textContent = "Submit";
+                button.addEventListener("click", function() {
+                    const inputs = inputContainer.querySelectorAll("input");
+                    const medicationName = inputs[0].value;
+                    const time = inputs[1].value;
+                    const dosage = inputs[2].value;
+                    console.log(medicationName, time, dosage);
+                    window.localStorage.setItem("name", medicationName);
+                    window.localStorage.setItem("time", time);
+                    window.localStorage.setItem("dosage", dosage);
+                });
+                inputContainer.appendChild(button);
+            }
         }
     </script>
 </body>

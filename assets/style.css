@@ -17,7 +17,7 @@ p{
     font-family: 'IBM Plex Mono', monospace;
 }
 
-.top{
+#top{
     display: flex;
     justify-content: space-around;
     border-bottom:rgb(240, 178, 128) solid 1px;

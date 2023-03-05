@@ -17,45 +17,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@300&display=swap" rel="stylesheet">
 
     <title>Tracker</title>
-
-
-    <script>
-        // function check(){
-        //     document.getElementById("checkmark").style.display="block";
-        //     document.getElementById("checkmark").style.width="13px";
-        //     document.getElementById("checkmark").style.padding="3px";
-
-        // }
-        // create a new input element with type "checkbox"
-        checkmark = document.getElementById("checkmark");
-        console.log(checkmark);
-
-        // add an onchange event listener to the checkbox
-        function hi() {
-            if (checkmark == null) {
-                check();
-            }
-            if (checkmark != null){
-                uncheck();
-                alert("bye");
-
-            }
-        };
-
-        function check() {
-            console.log(document.getElementById("checkmark").style.display="block");
-            document.getElementById("checkmark").style.width="13px";
-            document.getElementById("checkmark").style.padding="3px";
-
-        }
-
-        // function to handle unchecking the checkbox
-        function uncheck() {
-            document.getElementById("checkmark").style.display="none";
-        }
-    </script>
-
-
 </head>
 
 <body>
@@ -68,7 +29,7 @@
             <img class="minus" src="assets/icons/minus.png" alt="minus">
         </div>
         <div class="check">
-            <div onclick="hi()" id="box" class="checkbox">
+            <div onclick="checkIt()" id="box" class="checkbox">
                 <img id="checkmark" class="checkmark" src="assets/icons/checkmark.png" alt="mark">
             </div>
             <p>16oz by 5PM today</p>
@@ -91,5 +52,34 @@
             </li>
         </ul>
     </nav>
+    <script>
+        var checked = false;
+        checkmark = document.getElementById("checkmark");
+        console.log(checkmark);
+
+        // add an onclick event listener to the checkbox
+        function checkIt() {
+            if (checked == false) {
+                check();
+            } else {
+                uncheck();
+                //alert("bye");
+            }
+        };
+
+        function check() {
+            checkmark.style.display="block";
+            document.getElementById("checkmark").style.width="13px";
+            document.getElementById("checkmark").style.padding="3px";
+            checked = true;
+        }
+
+        // function to handle unchecking the checkbox
+        function uncheck() {
+            checkmark = document.getElementById("checkmark");
+            checkmark.style.display = "none";
+            checked = false;
+        }
+    </script>
 </body>
 </html>

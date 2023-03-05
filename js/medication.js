@@ -1,5 +1,5 @@
-const form = document.querySelector('#search-form');
-const searchQuery = document.querySelector('#search-query');
+const form = document.querySelector('#search');
+const searchQuery = document.querySelector('#searchId');
 const resultsDiv = document.querySelector('#results');
 
 // add event listener to search input field

@@ -27,11 +27,22 @@
             if(name!=null && time!=null && dosage!=null){
                 document.getElementById("med").innerHTML = "Hey User! Make sure to take your " + dosage + "mg of " + name + " at " + time;
             } else {
-                document.getElementById("med").innerHTML = "Hey User! Make sure to take the Prozac medication today at 9:00AM.";
+                document.getElementById("med").innerHTML = "Hey User! You currently have no active medications!";
+            }
+        }
+        function getInfoTask(){
+            const timefortask = localStorage.getItem("timefortask");
+            const task = localStorage.getItem("task");
+            //console.log(name, time, dosage);
+            if(task!=null && timefortask!=null){
+                document.getElementById("task").innerHTML = "Hey User! Make sure to " + task + " at " + timefortask;
+            } else {
+                document.getElementById("task").innerHTML = "Hey User! You currently have no tasks!";
             }
         }
         window.onload = function() {
             getInfo();
+            getInfoTask();
             //console.log("here");
             getPositives();
         }
@@ -55,7 +66,7 @@
             <p id="med">Hey User! Make sure to take the Prozac medication today at 9:00AM.</p>
         </div>
         <div>
-            <p>Hey User! Your tracker says you haven't drank water today.</p>
+            <p id="task">Hey User! You currently have no tasks!</p>
         </div>
         
     </section>

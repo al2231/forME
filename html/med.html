@@ -16,9 +16,23 @@
 
     <title>Medication Information</title>
   </head>
-  <body>
+  <body style="font-size: large;">
     <h1>Medication Information</h1>
     <div id="med-info"></div>
+    <nav class="bottom">
+        <ul>
+            <li> 
+                <a href="index.html"><img class = "house" src="../assets/nav/house.png" alt="home" ></a>
+            </li>
+            <li> 
+                <a href="birthcontrol.html"><img class="heartpills" src="../assets/nav/bwheart.png" alt="pills" ></a>
+            </li>
+            <li> 
+                <a href="track.html"><img class="tracker" src="../assets/nav/bwnote.png" alt="tracker" ></a>
+            </li>
+        </ul>
+
+    </nav>
     <script>
         function displayMedicationInfo(brand_name, generic_name, type, storage, manufacturer, route, active_ingredient, indications_and_usage) {
             const medicationHTML = `
@@ -52,6 +66,7 @@
                     <h3>indications and usage</h3>
                     <p>${indications_and_usage}</p>
                 </section>
+                
             `;
             document.getElementById("med-info").innerHTML = medicationHTML;
         }

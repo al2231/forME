@@ -69,7 +69,6 @@ ul{
     list-style-type: none;
     margin:10px;
     padding: 0;
-    padding-right: 30px;
     overflow: hidden;
 }
 
@@ -420,13 +419,14 @@ input{
 /* info pages */
 .infoB{
     display: grid;
-    grid-template-columns: 3% auto;
+    grid-template-columns: 13% auto;
     background-color: #FFFFFF;
     position: fixed;
     margin-top: -50px;
     padding-top: 35px;
     width: 100%;
     border-bottom:rgb(240, 178, 128) solid 1px;
+    margin-left:-30px;
 }
 
 .infoB h2{
@@ -434,13 +434,13 @@ input{
     justify-content: center;
     margin-top: 5px;
     margin-bottom: 30px;
-    margin-right:56px;
+    margin-right:45px;
 }
 
 .back{
     height: 27px;
     padding: 10px;
-    float: left;
+
 }
 
 .mirena{

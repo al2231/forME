@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Medication Information</title>
+  </head>
+  <body>
+    <h1>Medication Information</h1>
+    <div id="med-info"></div>
+    <script>
+        function displayMedicationInfo(brand_name, generic_name, type, storage, manufacturer, route, active_ingredient, indications_and_usage) {
+            const medicationHTML = `
+                <h2>${brand_name} (${generic_name})</h2>
+                <h3>type</h3>
+                <p>${type}</p>
+                <h3>storage</h3>
+                <p>${storage}</p>
+                <h3>manufacturer</h3>
+                <p>${manufacturer}</p>
+                <h3>route</h3>
+                <p>${route}</p>
+                <h3>active ingredients</h3>
+                <p>${active_ingredient}</p>
+                <h3>indications and usage</h3>
+                <p>${indications_and_usage}</p>
+            `;
+            document.getElementById("med-info").innerHTML = medicationHTML;
+        }
+        function getMedicationData(query) {
+    const url = `https://api.fda.gov/drug/label.json?search=openfda.brand_name:${query}&limit=1`;
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            const result = data.results[0];
+            if (result) {
+                const openFDA = result.openfda;
+
+                let brand_name = openFDA.brand_name || "Brand name information not available";
+                let generic_name = openFDA.generic_name || "Generic name information not available";
+                let type = openFDA.product_type || "Product type information not available";
+                let storage = result.storage_and_handling || "Storage information not available";
+                let manufacturer = openFDA.manufacturer_name || "Manufacterer name information not available";
+                let route = result.route || "Route information not available";
+                let active_ingredient = result.active_ingredient || "Active ingredient information not available";
+                let indications_and_usage = result.indications_and_usage || "Indications and usage information not available";
+
+                displayMedicationInfo(brand_name, generic_name, type, storage, manufacturer, route, active_ingredient, indications_and_usage);
+            } else {
+                displayError("No medication data found.");
+            }
+        })
+        .catch(error => console.error(error));
+}
+
+        
+        // Check if the query parameter is present in the URL
+        const queryString = window.location.search;
+        if (queryString) {
+            const urlParams = new URLSearchParams(queryString);
+            const query = urlParams.get('query');
+            getMedicationData(query);
+        }
+    </script >
+  </body>
+</html>

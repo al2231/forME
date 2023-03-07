@@ -195,15 +195,15 @@
             button.textContent = "Add";
             button.addEventListener("click", function() {
                 const inputs = inputContainer.querySelectorAll("input");
-                const name = inputs[0].value;
-                const time = inputs[1].value;
+                const task = inputs[0].value;
+                const timefortask = inputs[1].value;
 
-                console.log(name, time);
+                console.log(task, timefortask);
 
                 //makeTWidget(name, time);
                 document.getElementById("input-container").style.display="none";
 
-                window.localStorage.setItem("name", name);
+                window.localStorage.setItem("task", task);
                 window.localStorage.setItem("timefortask", time);
             });
             button.style.margin= "10px";
@@ -214,7 +214,7 @@
             document.getElementById("dropdown").style.display="none";
         }
 
-        function makeTWidget(name, time) {
+        function makeTWidget(task, timefortask) {
             trackerContainer = document.getElementById("trackers_container");
             const trackerHTML = `
                 <div class="trackind">
@@ -225,7 +225,7 @@
                     <div onclick="checkIt()" id="box" class="checkbox">
                         <img id="checkmark" class="checkmark" src="../assets/icons/checkmark.png" alt="mark">
                     </div>
-                <p id="reminder">${name} by ${time} today!</p>
+                <p id="reminder">${task} by ${timeoftask} today!</p>
                 </div>`;
             trackerContainer.append(trackerHTML);
         }
